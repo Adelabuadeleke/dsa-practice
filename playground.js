@@ -51,6 +51,10 @@
 
 // printAllNumsThenSum([1,2,3,4,5]) // O(n^2)
 
+
+// -.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-
+
+
 // Given two arrays, create a function that let's user know (true/false) whether these two arrays contain any common items
 // Example:
 // const array1 = ['a', 'b', 'c', 'x'];
@@ -109,8 +113,39 @@ const array2 = ['a', 'y', 'x'];
 
 // containsCommonitems2(array1, array2); //O(a + b) ==> Time complexity
 
-function containsCommonitems3(arr1, arr2) {
-    return arr1.some(item => arr2.includes(item))
+// function containsCommonitems3(arr1, arr2) {
+//     return arr1.some(item => arr2.includes(item))
+// }
+
+// containsCommonitems3(array1, array2);
+
+
+// -.-.-.-.--.-.-.--.-.-.-.-.--.-.--.-.--.-.--.-.--.-.--.-.-.--.-.--.-.-.--.-.--.-.-.-.--.-
+
+// check if input array has pairs that sums up to a given  sum.
+// Naive
+function hasPairWithSum(arr, sum) {
+    var len = arr.length;
+
+    for(var i = 0; i < len - 1; i++) {
+        for(let j = i + 1; j < len; j++) {
+            if(arr[i] + arr[j] === sum)  {
+                return true;
+            }
+        }
+    }
+    return false;
 }
 
-containsCommonitems3(array1, array2);
+// Better
+function hasPairWithSum2(arr, sum) {
+    const mySet = new Set();
+    const len = arr.length;
+    for (let i = 0; i < len; i++) {
+        if (mySet.has(arr[i])) {
+            return true;
+        }
+        mySet.add(sum - arr[i]) ;
+    }
+    return false;
+}
