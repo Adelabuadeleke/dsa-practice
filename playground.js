@@ -35,18 +35,82 @@
 
 // logPairs(boxes);
 
-function printAllNumsThenSum(numbers) {
-    console.log('these are the numbers:');
-    numbers.forEach(function(number){
-        console.log(number);
-    })
+// function printAllNumsThenSum(numbers) {
+//     console.log('these are the numbers:');
+//     numbers.forEach(function(number){
+//         console.log(number);
+//     })
 
-    console.log('and these are their sums');
-    numbers.forEach(function(firstNumber){
-        numbers.forEach(function(secondNumber){
-            console.log(firstNumber + secondNumber);
-        })
-    })
+//     console.log('and these are their sums');
+//     numbers.forEach(function(firstNumber){
+//         numbers.forEach(function(secondNumber){
+//             console.log(firstNumber + secondNumber);
+//         })
+//     })
+// }
+
+// printAllNumsThenSum([1,2,3,4,5]) // O(n^2)
+
+// Given two arrays, create a function that let's user know (true/false) whether these two arrays contain any common items
+// Example:
+// const array1 = ['a', 'b', 'c', 'x'];
+// const array2 = ['z', 'y', 'i'];
+// should return false.
+//-------------------------------------------------------------
+const array1 = ['a', 'b', 'c', 'x'];
+const array2 = ['a', 'y', 'x'];
+// should return true.
+
+// 2 parameters - arrays
+// return true or false
+
+// function containsCommonitems(arr1, arr2) {
+//     for(let i = 0; i < arr1.length; i++) {
+//         for (let j = 0; j < arr2.length; j++) {
+//             if(arr1[i] === arr2[j]){
+//                 return console.log(true);
+//             }
+//         }
+//     }
+//     return console.log(false) ;
+// }
+
+
+// containsCommonitems(array1, array2); 
+// O(a*b) time complexity
+// O(1) space complexity
+
+// array1 ===> obj {
+// a:true,
+// b:true,
+// c:true,
+// x:true,
+// }
+// array2[i] === obj.properties
+
+
+// function containsCommonitems2(arr1, arr2) {
+//     let map = {};
+//     for(let i = 0; i < arr1.length; i++) {
+//         if(!map[arr1[i]]){
+//             const item = array1[i];
+//             map[item] = true;
+//         }
+//     }
+
+//     for(let j = 0; j < arr2.length; j++) {
+//         if(map[arr2[j]]) {
+//             return console.log(true)
+//         }
+//     }
+//     return console.log(false)
+//     // console.log(map)
+// }
+
+// containsCommonitems2(array1, array2); //O(a + b) ==> Time complexity
+
+function containsCommonitems3(arr1, arr2) {
+    return arr1.some(item => arr2.includes(item))
 }
 
-printAllNumsThenSum([1,2,3,4,5]) // O(n^2)
+containsCommonitems3(array1, array2);
