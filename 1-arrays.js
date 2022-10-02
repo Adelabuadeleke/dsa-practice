@@ -12,7 +12,7 @@ strings.unshift('x') //O(n)
 // splice
 strings.splice(2,0,'aliens') //0(n)
 
-console.log(strings);
+// console.log(strings);
 
 // Static(Fixed Size) & Dynamic Arrays*
 
@@ -33,7 +33,7 @@ const object4 = {
 // instantiation
 class Player {
  constructor(name, type) {
-  console.log('player',this)
+  // console.log('player',this)
   this.name = name;
   this.type = type;
  }
@@ -46,7 +46,7 @@ class Player {
 class Wizard extends Player{
  constructor(name, type) {
   super(name, type)
-  console.log('wizard', this)
+  // console.log('wizard', this)
 
  }
 
@@ -57,5 +57,55 @@ class Wizard extends Player{
 
 const wizard1 = new Wizard('Shelly', 'Healer');
 const wizard2 = new Wizard('Shawn', 'Dark Magic');
-wizard1.play()
-wizard1.introduce()
+// wizard1.play()
+// wizard1.introduce()
+
+// implementing an array...
+class MyArray{
+ constructor() {
+  this.length = 0;
+  this.data = {}
+ }
+
+ get(index) {
+  return this.data[index]
+ }
+
+ push(item) {
+  this.data[this.length] = item;
+  this.length++;
+  return this.length;
+ }
+
+ pop() {
+  const lastitem = this.data[this.length - 1];
+  delete this.data[this.length-1];
+  this.length--;
+  return lastitem;
+ }
+
+ delete(index) {
+  const item = this.data[index];
+  this.shiftitems(index)
+ }
+
+ shiftitems(index) {
+  for(let i = index; i < this.length - 1; i++ ) {
+   this.data[i] = this.data[i + 1];
+  }
+  delete this.data[this.length - 1] ;
+  this.length--;
+ }
+}
+
+const newArray = new MyArray();
+newArray.push('hi');
+newArray.push('you');
+newArray.push('!');
+newArray.delete(0)
+newArray.push('are');
+newArray.push('nice');
+// newArray.pop();
+// newArray.pop();
+newArray.delete(1)
+console.log(newArray);
