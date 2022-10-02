@@ -109,3 +109,42 @@ newArray.push('nice');
 // newArray.pop();
 newArray.delete(1)
 console.log(newArray);
+
+// Reverse a string
+// --> Create a function  that reverses a string:
+// -->'Hi My name is Kamal:
+//  --> Reverse 
+
+
+
+function reverse(str) {
+ let revArr = []
+ let revStr = ""
+
+ if (!str || str.length < 2 || typeof str !== 'string'){
+  return 'hmm that is not good'
+ }
+ // put the letters in a stack
+ for (let i = 0; i < str.length; i++) {
+  // console.log(str.length)
+  revArr.push(str[i]);
+ }
+ // console.log(revArr)
+
+ // put letters into a var
+  for(let i = 0; i < str.length; i++) {
+   revStr += revArr.pop()
+  }
+ 
+ console.log(revStr)
+
+}
+
+function reverse2(str) {
+ return console.log(str.split('').reverse().join(''))
+}
+
+const reverse3 = str => [...str].reverse.join('');
+
+let string = 'Hi My name is Kamal'
+reverse2(string)
