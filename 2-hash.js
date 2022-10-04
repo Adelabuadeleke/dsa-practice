@@ -69,9 +69,33 @@ class HashTable {
 
 }
 
-const myHashTable = new HashTable(50);
-myHashTable.set('grapes', 10000);
-myHashTable.set('apples', 54);
-myHashTable.set('oranges', 2);
-myHashTable.get('apples');
-myHashTable.keys()
+// const myHashTable = new HashTable(50);
+// myHashTable.set('grapes', 10000);
+// myHashTable.set('apples', 54);
+// myHashTable.set('oranges', 2);
+// myHashTable.get('apples');
+// myHashTable.keys()
+
+// Google Question
+// Given an array = [2,5,1,2,3,5,1,2,4];
+// returns 2
+
+// Given an array = [2,1,1,2,3,5,1,2,4];
+// returns 1
+
+// Given an array = [2,3,4,5];
+// returns undefined
+
+function firstRecurringCharacter(input) {
+ for(let i = 0; i < input.length; i++){
+  for(let j = i + 1; j < input.length; j++){
+   if(input[i] === input[j]) {
+    return console.log(input[i])
+   }
+  }
+ }
+
+ return console.log(undefined)
+} //O(n^2)
+
+firstRecurringCharacter([2,5,1,2,3,5,1,2,4])
