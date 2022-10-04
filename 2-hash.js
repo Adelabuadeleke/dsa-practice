@@ -113,4 +113,4 @@ function firstRecurringCharacter2(input){
  return console.log(undefined)
 } //O(n)
 
-firstRecurringCharacter2([2,5,1,2,3,5,1,2,4])
+firstRecurringCharacter([2,5,1,2,3,5,1,2,4])
