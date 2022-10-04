@@ -98,4 +98,19 @@ function firstRecurringCharacter(input) {
  return console.log(undefined)
 } //O(n^2)
 
-firstRecurringCharacter([2,5,1,2,3,5,1,2,4])
+function firstRecurringCharacter2(input){
+ let map = {};
+ for(let i = 0; i < input.length; i++ ){
+  if(map[input[i]] !== undefined){
+   return console.log(input[i])
+  } else {
+   map[input[i]] = i
+  }
+ console.log(map);
+  
+ }
+
+ return console.log(undefined)
+} //O(n)
+
+firstRecurringCharacter2([2,5,1,2,3,5,1,2,4])
