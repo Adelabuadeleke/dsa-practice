@@ -21,4 +21,11 @@ class CrazyQueue {
   this.first.pop();
   return console.log(this)
  }
+
+ peek() {
+  if(this.last.length > 0) {
+   return cosole.log(this.last[0]);
+  }
+  return this.first[this.first.length - 1];
+ }
 }
