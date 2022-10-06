@@ -24,8 +24,20 @@ class CrazyQueue {
 
  peek() {
   if(this.last.length > 0) {
-   return cosole.log(this.last[0]);
+   return console.log(this.last[0]);
   }
-  return this.first[this.first.length - 1];
+  return console.log(this.first[this.first.length - 1]);
  }
 }
+
+const myQueue = new CrazyQueue();
+
+myQueue.peek();
+myQueue.enqueue('Joy');
+myQueue.enqueue('Matt');
+myQueue.enqueue('Pavel');
+myQueue.peek();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.peek();
