@@ -13,7 +13,7 @@ class Queue {
  }
 
  peek(){
-  
+  return console.log(this.first)
  }
 
  enqueue(value){
