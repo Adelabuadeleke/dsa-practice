@@ -13,11 +13,21 @@ class Stack {
  }
 
  peek() {
-
+  return console.log(this.top)
  }
 
  push(value) {
-
+  const newNode = new Node(value);
+  if(this.length === 0) {
+   this.top = newNode;
+   this.bottom = newNode
+  } else {
+   const holdingPointer = this.top;
+   this.top = newNode;
+   this.top.next = holdingPointer;
+  }
+  this.length++;
+  return console.log(this);
  }
 
  pop() {
@@ -27,5 +37,8 @@ class Stack {
  isEmpty() {
 
  }
- 
+
 }
+
+const myStack = new Stack();
+myStack.push('google');
