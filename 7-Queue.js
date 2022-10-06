@@ -67,6 +67,10 @@ myQueue.enqueue('Pavel');
 myQueue.enqueue('Samir');
 myQueue.peek();
 myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
+myQueue.dequeue();
 // Joy
 // Matt
 // Pavel
