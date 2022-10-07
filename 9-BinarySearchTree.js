@@ -70,7 +70,8 @@ tree.insert(20)
 tree.insert(170)
 tree.insert(15)
 tree.insert(1)
-JSON.stringify(traverse(tree.root))
+tree.lookup(9)
+// JSON.stringify(traverse(tree.root))
 
 function traverse(node) {
  const tree = {value: node.value};
