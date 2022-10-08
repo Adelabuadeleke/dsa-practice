@@ -85,7 +85,7 @@ class BinarySearchTree {
      // Option 2:Right child with no left child
     } else if(currentNode.right.left === null){
      currentNode.right.left = currentNode.left;
-     if(parent === null){
+     if(parentNode === null){
       this.root = currentNode.right;
      } else {
        if(currentNode.value < parentNode.value) {
@@ -133,8 +133,8 @@ tree.insert(170)
 tree.insert(15)
 tree.insert(1)
 tree.lookup(9)
-tree.remove(170)
-// JSON.stringify(traverse(tree.root))
+tree.remove(20)
+JSON.stringify(traverse(tree.root))
 
 function traverse(node) {
  const tree = {value: node.value};
