@@ -39,7 +39,7 @@ class Graph {
     connections += vertex +  "";
    }
 
-   console.log(node + "-->" + connections)
+   console.log(node + " --> " +  connections)
   }
  }
 }
