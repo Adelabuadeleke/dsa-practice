@@ -19,7 +19,8 @@ class Graph {
  }
 
  addVertex(node) {
-
+  this.adjacentList[node] = [];
+  this.numberOfNodes++;
  }
 
  addEdge(node1, node2) {
