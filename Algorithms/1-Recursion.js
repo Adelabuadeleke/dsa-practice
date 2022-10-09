@@ -44,35 +44,47 @@ function findFactorialiterative(number) {
 // the  2 previous values, that means that for N=5 --> 2+3
 
 
-function fibonacciiterative(n){
- let fib = [0, 1]
- if (n <= 1) {
-  return console.log(fib.indexOf(n))
- }
- for (let i = 0; i < n; i++) {
-  let next = fib[fib.length - 2]
-  let next2 = fib[fib.length - 1] 
+// function fibonacciiterative(n){
+//  let fib = [0, 1]
+//  if (n <= 1) {
+//   return console.log(fib.indexOf(n))
+//  }
+//  for (let i = 0; i < n; i++) {
+//   let next = fib[fib.length - 2]
+//   let next2 = fib[fib.length - 1] 
 
-  if(fib.includes(n)){
-   return console.log(fib.indexOf(n))
-  } else{
+//   if(fib.includes(n)){
+//    return console.log(fib.indexOf(n))
+//   } else{
 
-   if(next2 > n) {
-    return console.log('number not included in fibonacci sequence')
-   }
-   let newNum = Number(next + next2)
-   // console.log(`${next} + ${next2} =  ${newNum}`)
-   // console.log(fib.length)
-   fib.push(newNum)
-  }
- }
+//    if(next2 > n) {
+//     return console.log('number not included in fibonacci sequence')
+//    }
+//    let newNum = Number(next + next2)
+//    // console.log(`${next} + ${next2} =  ${newNum}`)
+//    // console.log(fib.length)
+//    fib.push(newNum)
+//   }
+//  }
  
- console.log(fib.indexOf(n), fib)
+//  console.log(fib.indexOf(n), fib)
+// }
+
+function fibonacciiterative(n) {
+ let arr = [0, 1]
+ for(let i = 2; i < n +1; i++){
+  arr.push(arr[i - 2] + arr[i - 1])
+ }
+ return arr[n]
 }
 fibonacciiterative(14);
 
 function fibonacciiterativeRecursion(n) {
- // code here
+ if (n <= 1) {
+  return n
+ }
+
+ return fibonacciiterativeRecursion(n - 1) + fibonacciiterativeRecursion(n - 2)
 }
 
-fibonacciiterativeRecursion(1)
+fibonacciiterativeRecursion(8)
