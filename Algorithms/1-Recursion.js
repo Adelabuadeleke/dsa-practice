@@ -14,7 +14,11 @@ function inception() {
 // One should use recursive, the other should just use a for loop.
 
 function findFactorialRecursive(number) {
- 
+ if(number === 2) {
+  return 2;
+ }
+
+ return number * findFactorialRecursive(number - 1)
 }
 
 function findFactorialiterative(number) {
@@ -30,4 +34,4 @@ function findFactorialiterative(number) {
  return console.log(answer);
 }
 
-findFactorialiterative(1)
+findFactorialRecursive()
