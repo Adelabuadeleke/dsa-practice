@@ -64,6 +64,49 @@ function insertionSort(array) {
  }
 }
 
+// Merge Sort
+function mergeSort(array) {
+ if(array.length === 1) {
+  return array;
+ }
+
+ // Split Array into right and left
+ const length = array.length;
+ const middle = Math.floor(length/ 2)
+ const left = array.slice(0, middle)
+ const right = array.slice(middle)
+ console.log('left: ', left)
+ console.log('right',right)
+
+ return merge(
+  mergeSort(left),
+  mergeSort(right)
+ )
+}
+
+function merge(left, right) {
+ const result = [];
+ let leftindex = 0;
+ let rightindex = 0;
+
+ while(leftindex < left.length && rightindex < right.length) {
+  if(left[leftindex] < right[rightindex]){
+   result.push(left[leftindex]);
+   leftindex++;
+  } else {
+   result.push(right[rightindex]);
+   rightindex++;
+  }
+ }
+
+ console.log(left, right)
+ return result.concat(left.slice(leftindex)).concat(right.slice(rightindex));
+}
+
+const answer = mergeSort(numbers);
+console.log('answer',answer)
+
 // bubbleSort(numbers);
-insertionSort(numbers)
-console.log(numbers);
+// selectionSort(numbers)
+// insertionSort(numbers)
+// console.log(numbers);
