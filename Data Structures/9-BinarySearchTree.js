@@ -155,7 +155,60 @@ class BinarySearchTree {
     }
     return this.breathFirstSearchRecursive(queue, list);
   }
+
+  DFSinorder() {
+    return traverseinOrder(this.root, [])
+  }
+
+  DFSPostorder() {
+    return traversePostOrder(this.root, [])
+
+  }
+
+  DFSPreorder() {
+    traversePreOrder(this.root, [])
+  }
 }
+
+function traverseinOrder(node, list) {
+  if(node.left) {
+    traverseinOrder(node.left, list)
+  }
+  list.push(node.value)
+  if(node.right) {
+    traverseinOrder(node.right, list)
+  }
+  return console.log(list)
+}
+
+
+function traversePreOrder(node, list) {
+  list.push(node.value)
+  if(node.left) {
+    traversePreOrder(node.left, list)
+  }
+  
+  if(node.right) {
+    traversePreOrder(node.right, list)
+  }
+  return console.log(list)
+}
+
+function traversePostOrder(node, list) {
+  
+  if(node.left) {
+    traversePostOrder(node.left, list)
+  }
+  
+  if(node.right) {
+    traversePostOrder(node.right, list)
+  }
+  list.push(node.value)
+  return console.log(list)
+}
+
+
+
 
 const tree = new BinarySearchTree();
 tree.insert(9)
@@ -167,8 +220,13 @@ tree.insert(15)
 tree.insert(1)
 tree.lookup(9)
 // tree.remove(20)
-tree.breathFirstSearch()
-tree.breathFirstSearchRecursive([tree.root], [])
+// tree.breathFirstSearch()
+// tree.breathFirstSearchRecursive([tree.root], [])
+tree.DFSPostorder()
+tree.DFSPreorder()
+tree.DFSinorder()
+
+
 // JSON.stringify(traverse(tree.root))
 
 function traverse(node) {
