@@ -77,7 +77,7 @@ function fibonacciiterative(n) {
  }
  return arr[n]
 }
-fibonacciiterative(14);
+// fibonacciiterative(14);
 
 function fibonacciiterativeRecursion(n) {
  if (n <= 1) {
@@ -87,4 +87,26 @@ function fibonacciiterativeRecursion(n) {
  return fibonacciiterativeRecursion(n - 1) + fibonacciiterativeRecursion(n - 2)
 }
 
-fibonacciiterativeRecursion(8)
+function fibonacciMaster() {
+ let cache = {};
+ return function fib(n) {
+  counter++
+  if(n in cache) {
+   return cache[n];
+  } else {
+   if(n < 2) {
+    return n;
+   } else {
+    cache[n] = fib(n - 1) + fib(n -2);
+    return cache[n];
+   }
+  }
+ }
+}
+
+const fasterFib = fibonacciMaster();
+console.log('DP', fasterFib(10));
+
+console.log('we did ' + counter + ' calculations')
+
+// console.log(fibonacciiterativeRecursion(8))
